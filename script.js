@@ -54,12 +54,6 @@ document.getElementById("the-form").addEventListener("submit", async (e) => {
   }
 });
 const now = new Date();
-document.getElementById("created-date").textContent = "Fecha de creación: " + now.toLocaleDateString();
+document.getElementById("created-date").textContent = "Fecha de creación: " + now.toLocaleDateString() + " - Bienvenido a la práctica.";
 
 const hour = now.getHours();
-let saludo = "Bienvenido";
-if (hour < 12) saludo = "Buenos días";
-else if (hour < 18) saludo = "Buenas tardes";
-else saludo = "Buenas noches";
-
-document.getElementById("welcome").textContent = `${saludo} — Gracias por visitar esta página`;
