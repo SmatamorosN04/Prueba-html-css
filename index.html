@@ -1,44 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <link rel="stylesheet" href="test.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de Práctica HTML + CSS + JS</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <h1>Test de Práctica HTML + CSS + JS</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Principal</a></li>
+        <li><a href="#">Complementaria</a></li>
+        <li><a href="#">Tabla</a></li>
+        <li><a href="#">Lista</a></li>
+        <li><a href="#">Formulario</a></li>
+      </ul>
+    </nav>
+  </header>
 
-   <header id="top" style="color: red;">
-  <h1 id="logo">Mi logo</h1>
-  <nav class="menu">
-    <a href="/" class="Home">Home</a> 
-    <a href="/posts" class="Posts">Posts</a> 
-     <a href="/about" class="About">About</a>
-  </nav>
-       <button id="btn">contacto</button>
-
-</header>
-
-<div class="content">
-
-  <div class="post">
-    <div class="post-title">Cómo aprender CSS</div>
-    <div class="post-body">
-      <img src="cover.jpg">
-      <p>Contenido...</p>
-      <a href="/post/css">Leer más</a>
+  <section class="cards">
+    <div class="card principal">
+      <h2>Card Principal</h2>
+      <p>Esta carta tiene un título más pequeño, con fondo degradado azul-verde y sombra.</p>
     </div>
-  </div>
+    <div class="card complementaria">
+      <h1>Card Complementaria</h1>
+      <p>Esta carta tiene un título más grande, con fondo degradado amarillo-naranja y borde inferior rojo.</p>
+    </div>
+  </section>
 
-  <form>
-    <div>Nombre</div>
-    <input type="text">
-    <div>Email</div>
-    <input type="text">
-    <button>Enviar</button>
+  <section class="tabla">
+    <h2>Tabla de Ejemplo</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Curso</th>
+          <th>Profesor</th>
+          <th>Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>HTML Básico</td><td>Luis</td><td>3 semanas</td></tr>
+        <tr><td>CSS Avanzado</td><td>Carmen</td><td>4 semanas</td></tr>
+        <tr><td>JavaScript</td><td>Mario</td><td>5 semanas</td></tr>
+        <tr><td colspan="3">Total de cursos: 3</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="lista">
+    <h2>Lista Ordenada</h2>
+    <ol start="2">
+      <li>Elemento A</li>
+      <li>Elemento B</li>
+      <li>Elemento C</li>
+      <li>Elemento D</li>
+    </ol>
+  </section>
+
+  <section class="formulario">
+    <h2>Formulario de Contacto</h2>
+     <h2>Formulario de Contacto</h2>
+  <form id="the-form">
+    <label>Nombre:<br><input type="text" name="name" required></label><br><br>
+    <label>Correo Electrónico:<br><input type="email" name="email" required></label><br><br>
+    <label>PIN:<br><input type="password" id="pin" required pattern="\d{4}"></label><br><br>
+    <label>Género/Sexo:<br><input type="text" name="gender" required></label><br><br>
+    <label>Edad:<br><input type="number" name="age" min="1" required></label><br><br>
+    <button type="submit">Enviar</button>
+    <p id="form-message" class="message"></p>
   </form>
+  </section>
+  <footer>
+  <p id="welcome"></p>
+  <p id="created-date"></p>
+</footer>
+    <script src="script.js"></script>
 
-</div>
-   
 </body>
 </html>
