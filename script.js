@@ -37,14 +37,14 @@ document.getElementById("the-form").addEventListener("submit", async (e) => {
   showMessage("Enviando datos...");
 
   try {
-    const res = await fetch(WEBHOOK_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    // Enviar como GET con query string al webhook (solicitud requerida)
+    const params = new URLSearchParams(data).toString();
+    const url = `${WEBHOOK_URL}?${params}`;
+
+    const res = await fetch(url, { method: "GET" });
 
     if (res.ok) {
-      showMessage("Datos enviados con éxito. ¡Gracias!");
+      showMessage("Petición GET enviada con éxito. ¡Gracias!");
       form.reset();
     } else {
       showMessage("Error del servidor: " + res.status, "error");
