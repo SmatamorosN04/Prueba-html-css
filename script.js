@@ -43,14 +43,12 @@ document.getElementById("the-form").addEventListener("submit", async (e) => {
 
     const res = await fetch(url, { method: "GET" });
 
-    if (res.ok) {
+    
       showMessage("Petición GET enviada con éxito. ¡Gracias!");
       form.reset();
-    } else {
-      showMessage("Error del servidor: " + res.status, "error");
-    }
-  } catch (err) {
-    showMessage("Error al enviar: " + err.message, "error");
+    
+  } catch (error) {
+    showMessage("Error al enviar la petición GET.", "error");
   }
 });
 const now = new Date();
