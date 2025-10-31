@@ -67,7 +67,14 @@
     <label>Nombre:<br><input type="text" name="name" required></label><br><br>
     <label>Correo Electrónico:<br><input type="email" name="email" required></label><br><br>
     <label>PIN:<br><input type="password" id="pin" required pattern="\d{4}"></label><br><br>
-    <label>Género/Sexo:<br><input type="text" name="gender" required></label><br><br>
+    <label for="gender">Género/Sexo:</label><br>
+    <input list="gender-list" id="gender" name="gender" required placeholder="Seleccione...">
+    <datalist id="gender-list">
+      <option value="Hombre">
+      <option value="Mujer">
+      <option value="Otro">
+      <option value="Prefiero no decirlo">
+    </datalist><br><br>
     <label>Edad:<br><input type="number" name="age" min="1" required></label><br><br>
     <button type="submit">Enviar</button>
     <p id="form-message" class="message"></p>
