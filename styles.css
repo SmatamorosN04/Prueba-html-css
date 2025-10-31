@@ -24,11 +24,10 @@
 }
 
 
-html, body {
+ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x:hidden ;
   background-color: var(--page-bg);
 }
 header {
@@ -54,35 +53,41 @@ nav a {
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
+  align-items: stretch;
   gap: 20px;
   padding: 20px;
+  flex-wrap: nowrap; /* evita que se apilen */
 }
+
+
 
 .card {
-  flex: 1 1 300px; /* permite que ambas crezcan igual desde 300px mínimo */
-  max-width: 500px;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-  color: #333;
+  box-shadow: var(--shadow);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Card Principal: más estrecha */
 .card.principal {
   background: linear-gradient(to right, var(--card-principal-start), var(--card-principal-end));
-  color: var(--card-principal-text);
-  flex: 0 0 30%;
+  width: 30%;
+  min-width: 280px;
 }
 
+/* Card Complementaria: más ancha */
 .card.complementaria {
   background: linear-gradient(to right, var(--card-complementaria-start), var(--card-complementaria-end));
-  flex: 1 1 65%;
-  min-width: 60%;
-  color: var(--card-complementaria-text);
- 
-
+  width: 65%;
+  min-width: 400px;
 }
+
+
 .message {
   font-weight: bold;
   margin-top: 10px;
@@ -124,14 +129,22 @@ footer {
     font-size: 13px;
     
   }
-  .cards {
+ .cards {
     flex-direction: column;
     align-items: center;
-    padding-left: 10px;
+    gap: 20px;
+  }
+
+  .card.principal,
+  .card.complementaria {
+    width: 90%;
+    max-width: 500px;
+    min-width: unset;
+    flex: none;
   }
 
   .card {
-    width: 90%;
+    width: 30%;
     margin-bottom: 20px;
   }
 
@@ -149,41 +162,7 @@ footer {
     padding: 10px 0;
   }
 }
-@media screen and (min-width: 320px) {
-  header {
-    flex-wrap: wrap;
-  }
 
-  nav ul {
-    flex-direction: row;
-    justify-content: left;
-    font-size: 13px;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-
-  table, th, td {
-    font-size: 14px;
-  }
-
-  ol {
-    padding-left: 20px;
-    font-size: 14px;
-  }
-
-  footer {
-    font-size: 14px;
-    padding: 10px 0;
-  }
-}
 
 .tabla, .lista, .formulario {
   padding: 20px;
